@@ -46,7 +46,7 @@ public class MathController {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
 		
-		double div = convertToDouble(numberOne) + convertToDouble(numberTwo);
+		double div = convertToDouble(numberOne) / convertToDouble(numberTwo);
 		return div;
 	}
 	
