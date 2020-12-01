@@ -1,7 +1,6 @@
 package br.com.bel;
 
-import javax.websocket.server.PathParam;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +11,7 @@ import br.com.bel.exception.UnsupportedMathOperationExecption;
 public class MathController {
 	
 	@RequestMapping(value="/sum/{numberOne}/{numberTwo}", method=RequestMethod.GET)
-	public Double sum(@PathParam("numberOne") String numberOne, @PathParam("numberTwo") String numberTwo) throws Exception {
+	public Double sum(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
@@ -22,7 +21,7 @@ public class MathController {
 	}
 	
 	@RequestMapping(value="/sub/{numberOne}/{numberTwo}", method=RequestMethod.GET)
-	public Double sub(@PathParam("numberOne") String numberOne, @PathParam("numberTwo") String numberTwo) throws Exception {
+	public Double sub(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
@@ -32,7 +31,7 @@ public class MathController {
 	}
 	
 	@RequestMapping(value="/mult/{numberOne}/{numberTwo}", method=RequestMethod.GET)
-	public Double mult(@PathParam("numberOne") String numberOne, @PathParam("numberTwo") String numberTwo) throws Exception {
+	public Double mult(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
@@ -42,7 +41,7 @@ public class MathController {
 	}
 	
 	@RequestMapping(value="/div/{numberOne}/{numberTwo}", method=RequestMethod.GET)
-	public Double div(@PathParam("numberOne") String numberOne, @PathParam("numberTwo") String numberTwo) throws Exception {
+	public Double div(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
@@ -52,7 +51,7 @@ public class MathController {
 	}
 	
 	@RequestMapping(value="/mean/{numberOne}/{numberTwo}", method=RequestMethod.GET)
-	public Double mean(@PathParam("numberOne") String numberOne, @PathParam("numberTwo") String numberTwo) throws Exception {
+	public Double mean(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
@@ -62,7 +61,7 @@ public class MathController {
 	}
 	
 	@RequestMapping(value="/squareRoot/{numberOne}", method=RequestMethod.GET)
-	public Double squareRoot(@PathParam("numberOne") String numberOne) throws Exception {
+	public Double squareRoot(@PathVariable("numberOne") String numberOne) throws Exception {
 		if (!isNumeric(numberOne)) {
 			throw new UnsupportedMathOperationExecption("Please set a numeric value");
 		}
