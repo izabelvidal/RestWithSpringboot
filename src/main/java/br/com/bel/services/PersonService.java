@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.bel.data.models.Person;
 import br.com.bel.exception.ResourceNotFoundException;
-import br.com.bel.models.Person;
 import br.com.bel.repositories.PersonRepository;
 
 @Service

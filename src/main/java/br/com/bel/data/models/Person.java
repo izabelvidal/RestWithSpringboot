@@ -1,4 +1,4 @@
-package br.com.bel.models;
+package br.com.bel.data.models;
 
 import java.io.Serializable;
 
