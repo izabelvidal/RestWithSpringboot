@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.bel.data.vo.PersonVO;
 import br.com.bel.data.vo.v2.PersonVOV2;
-import br.com.bel.services.PersonService;
+import br.com.bel.services.PersonServices;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v2")
 public class PersonController {
 	
 	@Autowired
-	private PersonService service;
+	private PersonServices service;
 	
 	@GetMapping
 	public List<PersonVO> findAll() {

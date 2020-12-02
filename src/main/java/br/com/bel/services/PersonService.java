@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.dozermapper.core.DozerConverter;
 
+import br.com.bel.converter.custom.PersonConverter;
 import br.com.bel.data.models.Person;
 import br.com.bel.data.vo.PersonVO;
 import br.com.bel.data.vo.v2.PersonVOV2;
