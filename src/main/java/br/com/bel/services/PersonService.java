@@ -15,24 +15,14 @@ import br.com.bel.exception.ResourceNotFoundException;
 import br.com.bel.repositories.PersonRepository;
 
 @Service
-public class PersonServices {
+public class PersonService {
 	
 	@Autowired
 	PersonRepository repository;
-	
-	@Autowired
-	PersonConverter converter;
 		
 	public PersonVO create(PersonVO person) {
 		var entity = DozerConverter.parseObject(person, Person.class);
 		var vo = DozerConverter.parseObject(repository.save(entity), PersonVO.class);
-		return vo;
-	}
-	
-	
-	public PersonVOV2 createV2(PersonVOV2 person) {
-		var entity = converter.convertVOToEntity(person);
-		var vo = converter.convertEntityToVO(repository.save(entity));
 		return vo;
 	}
 	

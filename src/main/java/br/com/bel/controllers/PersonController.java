@@ -17,14 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.bel.data.vo.PersonVO;
-import br.com.bel.services.PersonServices;
+import br.com.bel.services.PersonService;
+import io.swagger.annotations.Api;
 
+@Api(value= "Person Endpoint")
 @RestController
 @RequestMapping("/api/person/v1")
 public class PersonController {
 
 	@Autowired
-	private PersonServices service;
+	private PersonService service;
 
 	@GetMapping(produces = { "application/json", "application/xml", "application/x-yaml" })
 	public List<PersonVO> findAll() {
